@@ -365,24 +365,24 @@ for (let i = 0; i < numeros.length; i++) {
 //------------------------------------------------------------------------
 //PSeint
 Proceso InvertirNumeros
-    Definir n, i, num, invertido, digito Como Real
+    Definir n, i, num, invertido, digito Como Entero
     // Pedir cantidad de números
     Escribir "Ingrese la cantidad de números:"
     Leer n
-	
+
     // Procesar cada número directamente, sin guardar en un arreglo
     Para i <- 1 Hasta n Con Paso 1
         Escribir "Ingrese el número ", i, ":"
         Leer num
-		
+
         // Invertir el número
         invertido <- 0
         Mientras num > 0
             digito <- num % 10
             invertido <- invertido * 10 + digito
-            num <- num / 10
+            num <- Trunc(num / 10)
         FinMientras
-		
+
         // Mostrar resultado inmediato
         Escribir "Número invertido: ", invertido
     FinPara
@@ -419,5 +419,6 @@ for (let i = 0; i < numeros.length; i++) {
 console.log(`Números invertidos: [${invertidos.join(", ")}]`);
 }
 invertirnumeros()
+
 
 
