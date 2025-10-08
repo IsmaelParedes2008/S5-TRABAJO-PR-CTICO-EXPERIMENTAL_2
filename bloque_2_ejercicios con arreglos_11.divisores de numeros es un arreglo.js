@@ -365,36 +365,26 @@ for (let i = 0; i < numeros.length; i++) {
 //------------------------------------------------------------------------
 //PSeint
 Proceso InvertirNumeros
-    Definir n, i, num, invertido Como Entero
-    Definir numeros[100], invertidos[100] Como Entero
-    Definir digitos, invertidoTexto Como Cadena
-
+    Definir n, i, num, invertido, digito Como Real
     // Pedir cantidad de números
-    Escribir "Ingrese la cantidad de números del arreglo:"
+    Escribir "Ingrese la cantidad de números:"
     Leer n
-
-    // Ingresar números
+	
+    // Procesar cada número directamente, sin guardar en un arreglo
     Para i <- 1 Hasta n Con Paso 1
         Escribir "Ingrese el número ", i, ":"
         Leer num
-        numeros[i] <- num
-    FinPara
-
-    // Invertir los números
-    Para i <- 1 Hasta n Con Paso 1
-        num <- numeros[i]
-        digitos <- ConvertirATexto(num)
-        invertidoTexto <- ""
-        Para j <- Longitud(digitos) Hasta 1 Con Paso -1
-            invertidoTexto <- invertidoTexto + Subcadena(digitos, j, j)
-        FinPara
-        invertidos[i] <- ConvertirANumero(invertidoTexto)
-    FinPara
-
-    // Mostrar resultados
-    Escribir "Números invertidos:"
-    Para i <- 1 Hasta n Con Paso 1
-        Escribir invertidos[i]
+		
+        // Invertir el número
+        invertido <- 0
+        Mientras num > 0
+            digito <- num % 10
+            invertido <- invertido * 10 + digito
+            num <- num / 10
+        FinMientras
+		
+        // Mostrar resultado inmediato
+        Escribir "Número invertido: ", invertido
     FinPara
 FinProceso
 
@@ -429,4 +419,5 @@ for (let i = 0; i < numeros.length; i++) {
 console.log(`Números invertidos: [${invertidos.join(", ")}]`);
 }
 invertirnumeros()
+
 
