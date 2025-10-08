@@ -1,3 +1,24 @@
+//PSeint
+Proceso PromedioArreglo
+    Definir n, i, num, suma, promedio Como Real
+
+    Escribir "Ingrese la cantidad de números del arreglo:"
+    Leer n
+
+    suma <- 0
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el número ", i, ":"
+        Leer num
+        suma <- suma + num
+    FinPara
+
+    promedio <- suma / n
+
+    Escribir "El promedio es: ", promedio
+FinProceso
+
+//JAVA SACRIPT
+//17 promedio de numeros en un arreglo
 function promedioarreglo() {
 let n = parseInt(prompt("Ingrese la cantidad de números del arreglo:"));
 
@@ -25,6 +46,26 @@ console.log(`El promedio es ${promedio}.`);
 promedioarreglo()
 
 //------------------------------------------------------------------------
+//PSeint
+Proceso ContarImpares
+    Definir n, i, num, contador Como Entero
+
+    Escribir "Ingrese la cantidad de números del arreglo:"
+    Leer n
+
+    contador <- 0
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el número ", i, ":"
+        Leer num
+        Si num % 2 <> 0 Entonces
+            contador <- contador + 1
+        FinSi
+    FinPara
+
+    Escribir "Cantidad de impares: ", contador
+FinProceso
+
+//JAVA SCRIPT
 //18.contar impares de un arreglo
 function contarImpares() {
     // Pedimos la cantidad de números
@@ -52,6 +93,26 @@ function contarImpares() {
 contarImpares();
 
 //-----------------------------------------------------------------------
+//PSeint
+Proceso MayoresDeEdad
+    Definir n, i, edad, contador Como Entero
+
+    Escribir "Ingrese la cantidad de edades en el arreglo:"
+    Leer n
+
+    contador <- 0
+    Para i <- 1 Hasta n
+        Escribir "Ingrese la edad ", i, ":"
+        Leer edad
+        Si edad >= 18 Entonces
+            contador <- contador + 1
+        FinSi
+    FinPara
+
+    Escribir "Mayores de edad: ", contador
+FinProceso
+
+//JAVA SCRIPT
 //19.mayores de edad en un arreglo
 function mayoresDeEdad() {
     // Pedimos la cantidad de números (edades)
@@ -79,6 +140,44 @@ function mayoresDeEdad() {
 mayoresDeEdad();
 
 //-----------------------------------------------------------------------
+//PSeint
+Proceso BuscarValor
+    Definir n, i, num, valor Como Entero
+    Definir encontrado Como Logico
+
+    Escribir "Ingrese la cantidad de números del arreglo:"
+    Leer n
+
+    encontrado <- Falso
+
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el número ", i, ":"
+        Leer num
+        Si num = valor Entonces
+            encontrado <- Verdadero
+        FinSi
+    FinPara
+
+    Escribir "Ingrese el valor a buscar en el arreglo:"
+    Leer valor
+
+    encontrado <- Falso
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el número ", i, ":"
+        Leer num
+        Si num = valor Entonces
+            encontrado <- Verdadero
+        FinSi
+    FinPara
+
+    Si encontrado Entonces
+        Escribir "El valor ", valor, " sí existe en el arreglo."
+    Sino
+        Escribir "El valor ", valor, " no existe en el arreglo."
+    FinSi
+FinProceso
+
+//JAVA SCRIPT
 //20.buscar valor en un arreglo
 function buscarValor() {
     // Pedimos la cantidad de números
@@ -114,6 +213,29 @@ function buscarValor() {
 buscarValor();
 
 //------------------------------------------------------------------------
+//PSeint
+Proceso ConcatenarPalabras
+    Definir n, i Como Entero
+    Definir palabra, resultado Como Cadena
+
+    Escribir "Ingrese la cantidad de palabras en el arreglo:"
+    Leer n
+
+    resultado <- ""
+
+    Para i <- 1 Hasta n
+        Escribir "Ingrese la palabra ", i, ":"
+        Leer palabra
+        resultado <- resultado + palabra
+        Si i < n Entonces
+            resultado <- resultado + " "
+        FinSi
+    FinPara
+
+    Escribir "Resultado concatenado: ", resultado
+FinProceso
+
+//JAVA SCRIPT
 //21.concatenar palabras en un arreglo
 function concatenarPalabras() {
     // Pedimos la cantidad de palabras
@@ -136,6 +258,23 @@ function concatenarPalabras() {
 concatenarPalabras();
 
 //-------------------------------------------------------------------------
+//PSeint
+Proceso CuboElementos
+    Definir n, i Como Entero
+    Definir num, cubo Como Real
+
+    Escribir "Ingrese la cantidad de números:"
+    Leer n
+
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el número ", i, ":"
+        Leer num
+        cubo <- num ^ 3
+        Escribir "El cubo de ", num, " es: ", cubo
+    FinPara
+FinProceso
+
+//JAVA SCRIPt
 //22.cubo de elementos de un arreglo
 function cuboElementos() {
     // Pedimos la cantidad de números
@@ -161,6 +300,30 @@ function cuboElementos() {
 cuboElementos();
 
 //------------------------------------------------------------------------
+//PSeint
+Proceso TablaDeMultiplicar
+    Definir n, i, j, num Como Entero
+    Dimension numeros[100]
+    
+    Escribir "Ingrese la cantidad de números para generar tablas:"
+    Leer n
+
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el número ", i, ":"
+        Leer numeros[i]
+    FinPara
+
+    Para i <- 1 Hasta n
+        num <- numeros[i]
+        Escribir "Tabla de ", num, ":"
+        Para j <- 1 Hasta 10
+            Escribir num, " x ", j, " = ", num * j
+        FinPara
+        Escribir ""  // línea en blanco entre tablas
+    FinPara
+FinProceso
+
+//JAVA SCRIPT
 //23.tabla de multiplicar de elementos
 function tablaMultiplicar() {
     // Pedimos la cantidad de números
@@ -187,6 +350,34 @@ function tablaMultiplicar() {
 tablaMultiplicar();
 
 //---------------------------------------------------------------------------
+//PSeint
+Proceso FactorialDeArreglo
+    Definir n, i, j, factorial Como Entero
+    Dimension numeros[100], factoriales[100]
+    
+    Escribir "Ingrese la cantidad de números en el arreglo:"
+    Leer n
+
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el número ", i, ":"
+        Leer numeros[i]
+    FinPara
+
+    Para i <- 1 Hasta n
+        factorial <- 1
+        Para j <- 1 Hasta numeros[i]
+            factorial <- factorial * j
+        FinPara
+        factoriales[i] <- factorial
+    FinPara
+
+    Escribir "Factoriales:"
+    Para i <- 1 Hasta n
+        Escribir "El factorial de ", numeros[i], " es ", factoriales[i]
+    FinPara
+FinProceso
+
+//JAVA SCRIPT
 //24.factorial de cada numero en un arreglo
 function factorialArreglo() {
     // Pedimos la cantidad de números
@@ -216,6 +407,36 @@ function factorialArreglo() {
 factorialArreglo();
 
 //------------------------------------------------------------------------
+//PSeint
+Proceso CopiarPares
+    Definir n, i Como Entero
+    Dimension numeros[100], pares[100]
+    
+    Escribir "Ingrese la cantidad de números en el arreglo:"
+    Leer n
+
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el número ", i, ":"
+        Leer numeros[i]
+    FinPara
+
+    Definir contadorPares Como Entero
+    contadorPares <- 0
+
+    Para i <- 1 Hasta n
+        Si numeros[i] % 2 = 0 Entonces
+            contadorPares <- contadorPares + 1
+            pares[contadorPares] <- numeros[i]
+        FinSi
+    FinPara
+
+    Escribir "Números pares:"
+    Para i <- 1 Hasta contadorPares
+        Escribir pares[i]
+    FinPara
+FinProceso
+
+//JAVA SCRIPT
 //25.copiar pares a otro arreglo
 function copiarPares() {
     // Pedimos la cantidad de números
@@ -243,6 +464,37 @@ function copiarPares() {
 copiarPares();
 
 //------------------------------------------------------------------------
+//PSeint
+Proceso SumarArreglos
+    Definir n, i Como Entero
+    Dimension A[100], B[100], C[100]
+    
+    Escribir "Ingrese la cantidad de elementos de los arreglos:"
+    Leer n
+
+    Escribir "=== Ingreso de elementos para el arreglo A ==="
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el número ", i, " del arreglo A:"
+        Leer A[i]
+    FinPara
+
+    Escribir "=== Ingreso de elementos para el arreglo B ==="
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el número ", i, " del arreglo B:"
+        Leer B[i]
+    FinPara
+
+    Para i <- 1 Hasta n
+        C[i] <- A[i] + B[i]
+    FinPara
+
+    Escribir "Arreglo C (suma de A y B):"
+    Para i <- 1 Hasta n
+        Escribir "C[", i, "] = ", C[i]
+    FinPara
+FinProceso
+
+//JAVA SCRIPT
 //26.suma de dos arreglos en un tercer arreglo
 function sumarArreglos() {
     // Pedimos la cantidad de elementos de los arreglos
@@ -273,3 +525,4 @@ function sumarArreglos() {
 }
 
 sumarArreglos();
+
